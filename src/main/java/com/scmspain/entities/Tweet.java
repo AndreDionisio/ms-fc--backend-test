@@ -5,7 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.Proxy;
+
 @Entity
+@Proxy(lazy = false)
 public class Tweet {
     @Id
     @GeneratedValue
@@ -16,7 +19,7 @@ public class Tweet {
     private String tweet;
     @Column (nullable=true)
     private Long pre2015MigrationStatus = 0L;
-
+    
     public Tweet() {
     }
 
